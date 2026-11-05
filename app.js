@@ -7,6 +7,12 @@ const counter = document.getElementById("lightbox-counter");
 let items = [];
 let index = 0;
 
+// Une capture de page entière est plus lisible en largeur, avec un défilement vertical.
+image.addEventListener("load", () => {
+  dialog.classList.toggle("is-tall", image.naturalHeight > image.naturalWidth * 1.2);
+  dialog.scrollTop = 0;
+});
+
 function show(next) {
   index = (next + items.length) % items.length;
   const tile = items[index];

@@ -60,11 +60,25 @@
                   montage quelconque ?</span
                 ><br />
                 <small>(sous-titres, logo, mots clés, chapitres...)</small>
-                <br />Le but est d'améliorer le RAG du projet 02.
               </p>
 
+              <div class="results goals">
+                <p class="results-title">Objectifs</p>
+                <ul class="goals-list">
+                  <li>
+                    Améliorer le RAG du projet 02 et détecter les mots-clés.
+                  </li>
+                  <li>
+                    N'envoyer en OCR que les images avec ajout, pour réduire les
+                    coûts.
+                  </li>
+                </ul>
+              </div>
+
               <div class="results">
-                <p class="results-title">Statistiques actuelles</p>
+                <p class="results-title">
+                  Statistiques actuelles sur 75 vidéos
+                </p>
                 <dl class="results-list">
                   <div>
                     <dt>Précision</dt>
@@ -86,8 +100,7 @@
 
               <ul class="details">
                 <li>
-                  <strong>Agents.</strong> Un orchestrateur délègue à un Dataset
-                  Builder, un Model Researcher et un Evaluator, puis décide du
+                  <strong>Agents.</strong> Un <span class="agent agent-orchestrator">orchestrateur</span> délègue à un <span class="agent agent-dataset-builder">Dataset Builder</span>, un <span class="agent agent-model-researcher">Model Researcher</span> et un <span class="agent agent-evaluator">Evaluator</span>, puis décide du
                   cycle suivant à partir de leurs rapports.
                 </li>
                 <li>
@@ -136,52 +149,125 @@
             <div class="project-media">
               <div class="mosaic">
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/agents/runs.png">
-                    <img src="assets/agents/runs.png" width="1400" height="900" loading="lazy" alt="Résumé des runs : état, coût, durée, expériences, tests finaux et modèle mis en production." />
+                  <a class="tile" href="assets/agents/runs.webp">
+                    <img
+                      src="assets/agents/thumbs/runs.webp"
+                      width="800"
+                      height="634"
+                      loading="lazy"
+                      alt="Résumé des runs : état, coût, durée, expériences, tests finaux et modèle mis en production."
+                    />
                   </a>
-                  <figcaption>Résumé des runs : état, coût, durée, expériences, tests finaux et modèle mis en production.</figcaption>
+                  <figcaption>
+                    Résumé des runs : état, coût, durée, expériences, tests
+                    finaux et modèle mis en production.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/agents/modele.png">
-                    <img src="assets/agents/modele.png" width="1400" height="900" loading="lazy" alt="Modèle en production : on envoie une vidéo et on voit les images où le classifieur détecte un ajout, avec un seuil réglable." />
+                  <a class="tile" href="assets/agents/modele.webp">
+                    <img
+                      src="assets/agents/thumbs/modele.webp"
+                      width="480"
+                      height="480"
+                      loading="lazy"
+                      alt="Modèle en production : on envoie une vidéo et on voit les images où le classifieur détecte un ajout, avec un seuil réglable."
+                    />
                   </a>
-                  <figcaption>Modèle en production : on envoie une vidéo et on voit les images où le classifieur détecte un ajout, avec un seuil réglable.</figcaption>
+                  <figcaption>
+                    Modèle en production : on envoie une vidéo et on voit les
+                    images où le classifieur détecte un ajout, avec un seuil
+                    réglable.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/agents/conversations.png">
-                    <img src="assets/agents/conversations.png" width="1400" height="900" loading="lazy" alt="Conversations des runs : chaque run se relit comme une discussion entre les agents." />
+                  <a class="tile" href="assets/agents/conversations.webp">
+                    <img
+                      src="assets/agents/thumbs/conversations.webp"
+                      width="480"
+                      height="480"
+                      loading="lazy"
+                      alt="Conversations des runs : chaque run se relit comme une discussion entre les agents."
+                    />
                   </a>
-                  <figcaption>Conversations des runs : chaque run se relit comme une discussion entre les agents.</figcaption>
+                  <figcaption>
+                    Conversations des runs : chaque run se relit comme une
+                    discussion entre les agents.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/agents/agents.png">
-                    <img src="assets/agents/agents.png" width="1400" height="900" loading="lazy" alt="Agents et outils : l&#x27;arbre des agents, ce que reçoit chaque modèle et des exemples d&#x27;appels réels." />
+                  <a class="tile" href="assets/agents/agents.webp">
+                    <img
+                      src="assets/agents/thumbs/agents.webp"
+                      width="480"
+                      height="352"
+                      loading="lazy"
+                      alt="Agents et outils : l&#x27;arbre des agents, ce que reçoit chaque modèle et des exemples d&#x27;appels réels."
+                    />
                   </a>
-                  <figcaption>Agents et outils : l'arbre des agents, ce que reçoit chaque modèle et des exemples d'appels réels.</figcaption>
+                  <figcaption>
+                    Agents et outils : l'arbre des agents, ce que reçoit chaque
+                    modèle et des exemples d'appels réels.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/agents/production.png">
-                    <img src="assets/agents/production.png" width="1400" height="900" loading="lazy" alt="Le parcours jusqu&#x27;au modèle de production : du split créé par les agents au modèle choisi par le code." />
+                  <a class="tile" href="assets/agents/production.webp">
+                    <img
+                      src="assets/agents/thumbs/production.webp"
+                      width="480"
+                      height="480"
+                      loading="lazy"
+                      alt="Le parcours jusqu&#x27;au modèle de production : du split créé par les agents au modèle choisi par le code."
+                    />
                   </a>
-                  <figcaption>Le parcours jusqu'au modèle de production : du split créé par les agents au modèle choisi par le code.</figcaption>
+                  <figcaption>
+                    Le parcours jusqu'au modèle de production : du split créé
+                    par les agents au modèle choisi par le code.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/agents/dataset.png">
-                    <img src="assets/agents/dataset.png" width="1400" height="900" loading="lazy" alt="Visionneuse du dataset : étiquette et votes des trois annotateurs pour chaque image." />
+                  <a class="tile" href="assets/agents/dataset.webp">
+                    <img
+                      src="assets/agents/thumbs/dataset.webp"
+                      width="480"
+                      height="480"
+                      loading="lazy"
+                      alt="Visionneuse du dataset : étiquette et votes des trois annotateurs pour chaque image."
+                    />
                   </a>
-                  <figcaption>Visionneuse du dataset : étiquette et votes des trois annotateurs pour chaque image.</figcaption>
+                  <figcaption>
+                    Visionneuse du dataset : étiquette et votes des trois
+                    annotateurs pour chaque image.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/agents/banc.png">
-                    <img src="assets/agents/banc.png" width="1400" height="2050" loading="lazy" alt="Banc des annotateurs : comparaison des réponses, du coût et de la durée des LLM annotateurs." />
+                  <a class="tile" href="assets/agents/banc.webp">
+                    <img
+                      src="assets/agents/thumbs/banc.webp"
+                      width="480"
+                      height="480"
+                      loading="lazy"
+                      alt="Banc des annotateurs : comparaison des réponses, du coût et de la durée des LLM annotateurs."
+                    />
                   </a>
-                  <figcaption>Banc des annotateurs : comparaison des réponses, du coût et de la durée des LLM annotateurs.</figcaption>
+                  <figcaption>
+                    Banc des annotateurs : comparaison des réponses, du coût et
+                    de la durée des LLM annotateurs.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/agents/saut.png">
-                    <img src="assets/agents/saut.png" width="1400" height="900" loading="lazy" alt="Test du saut d&#x27;images : celles envoyées aux annotateurs et celles sautées comme quasi identiques." />
+                  <a class="tile" href="assets/agents/saut.webp">
+                    <img
+                      src="assets/agents/thumbs/saut.webp"
+                      width="480"
+                      height="480"
+                      loading="lazy"
+                      alt="Test du saut d&#x27;images : celles envoyées aux annotateurs et celles sautées comme quasi identiques."
+                    />
                   </a>
-                  <figcaption>Test du saut d'images : celles envoyées aux annotateurs et celles sautées comme quasi identiques.</figcaption>
+                  <figcaption>
+                    Test du saut d'images : celles envoyées aux annotateurs et
+                    celles sautées comme quasi identiques.
+                  </figcaption>
                 </figure>
               </div>
             </div>
@@ -214,35 +300,81 @@
                     <dd>75 questions</dd>
                   </div>
                 </dl>
-              <table class="latency">
-                <caption>Latence</caption>
-                <thead>
-                  <tr><th scope="col"></th><th scope="col">P50</th><th scope="col">P75</th><th scope="col">P90</th><th scope="col">P95</th></tr>
-                </thead>
-                <tbody>
-                  <tr><th scope="row">Premier token</th><td>3,17 s</td><td>3,72 s</td><td>4,11 s</td><td>4,95 s</td></tr>
-                  <tr><th scope="row">Réponse prête</th><td>3,74 s</td><td>4,51 s</td><td>5,33 s</td><td>5,68 s</td></tr>
-                </tbody>
-              </table>
+                <table class="latency">
+                  <caption>
+                    Latence
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">P50</th>
+                      <th scope="col">P75</th>
+                      <th scope="col">P90</th>
+                      <th scope="col">P95</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Premier token</th>
+                      <td>3,17 s</td>
+                      <td>3,72 s</td>
+                      <td>4,11 s</td>
+                      <td>4,95 s</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Réponse prête</th>
+                      <td>3,74 s</td>
+                      <td>4,51 s</td>
+                      <td>5,33 s</td>
+                      <td>5,68 s</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
               <ul class="details">
                 <li>
                   <strong>Recherche hybride.</strong>
-                  Full-text PostgreSQL, vectorielle avec pgvector, fusion RRF, puis reranking Cohere. Le modèle d'embedding et la taille des vecteurs ont été choisis par un banc sur 45 questions annotées.
-                  <a class="details-link" href="https://ionis.tanguym.fr/pipeline_reponse/" target="_blank" rel="noopener noreferrer">Voir le pipeline de réponse →</a>
+                  Full-text PostgreSQL, vectorielle avec pgvector, fusion RRF,
+                  puis reranking Cohere. Le modèle d'embedding et la taille des
+                  vecteurs ont été choisis par un banc sur 45 questions
+                  annotées.
+                  <a
+                    class="details-link"
+                    href="https://ionis.tanguym.fr/pipeline_reponse/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Voir le pipeline de réponse →</a
+                  >
                 </li>
                 <li>
                   <strong>Recherche chiffrée.</strong> Une route Text-to-SQL
                   répond aux questions chiffrées. Le pipeline tourne sur
                   LangGraph, avec un agent autonome Mistral.
                 </li>
-                <li><strong>Agent de secours.</strong> En cas d'échec, un agent prend le relais.</li>
+                <li>
+                  <strong>Agent de secours.</strong> En cas d'échec, un agent
+                  prend le relais.
+                </li>
                 <li>
                   <strong>Préparation des vidéos.</strong>
-                  Création d'un pipeline de traitement automatisé pour obtenir le maximum d'informations utiles (sous-titres, questions posées, type de vidéo, identification des speakers...).
-                  <a href="https://github.com/tangmomb/rag_ionis_images_classifier" target="_blank" rel="noopener noreferrer">Création d'un petit modèle de régression logistique pour aider à identifier les types de vidéos.</a>
-                  <a class="details-link" href="https://ionis.tanguym.fr/pipeline_preparation_videos/" target="_blank" rel="noopener noreferrer">Voir le pipeline de préparation →</a>
+                  Création d'un pipeline de traitement automatisé pour obtenir
+                  le maximum d'informations utiles (sous-titres, questions
+                  posées, type de vidéo, identification des speakers...).
+                  <a
+                    href="https://github.com/tangmomb/rag_ionis_images_classifier"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Création d'un petit modèle de régression logistique pour
+                    aider à identifier les types de vidéos.</a
+                  >
+                  <a
+                    class="details-link"
+                    href="https://ionis.tanguym.fr/pipeline_preparation_videos/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Voir le pipeline de préparation →</a
+                  >
                 </li>
                 <li>
                   <strong>Déploiement.</strong> Docker, Caddy et GitHub Actions,
@@ -289,206 +421,496 @@
             <div class="project-media">
               <div class="mosaic">
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/screenshot_pipeline_reponse.png">
-                    <img src="assets/rag/screenshot_pipeline_reponse.png" width="1417" height="1050" loading="lazy" alt="Graphe complet du pipeline de réponse RAG, avec le parcours de la question éclairé" />
+                  <a
+                    class="tile"
+                    href="assets/rag/screenshot_pipeline_reponse.webp"
+                  >
+                    <img
+                      src="assets/rag/thumbs/screenshot_pipeline_reponse.webp"
+                      width="800"
+                      height="593"
+                      loading="lazy"
+                      alt="Graphe complet du pipeline de réponse RAG, avec le parcours de la question éclairé"
+                    />
                   </a>
                   <figcaption>De la question à la réponse.</figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/speaker.png">
-                    <img src="assets/rag/speaker.png" width="535" height="299" loading="lazy" alt="Le pipeline relie une prise de parole à son intervenant et à son timecode." />
+                  <a class="tile" href="assets/rag/speaker.webp">
+                    <img
+                      src="assets/rag/thumbs/speaker.webp"
+                      width="480"
+                      height="268"
+                      loading="lazy"
+                      alt="Le pipeline relie une prise de parole à son intervenant et à son timecode."
+                    />
                   </a>
-                  <figcaption>Le pipeline relie une prise de parole à son intervenant et à son timecode.</figcaption>
+                  <figcaption>
+                    Le pipeline relie une prise de parole à son intervenant et à
+                    son timecode.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/02_12.jpg">
-                    <img src="assets/rag/02_12.jpg" width="1280" height="720" loading="lazy" alt="L&#x27;OCR permet de conserver une question visible, même sans voix dans la vidéo." />
+                  <a class="tile" href="assets/rag/02_12.webp">
+                    <img
+                      src="assets/rag/thumbs/02_12.webp"
+                      width="480"
+                      height="270"
+                      loading="lazy"
+                      alt="L&#x27;OCR permet de conserver une question visible, même sans voix dans la vidéo."
+                    />
                   </a>
-                  <figcaption>L'OCR permet de conserver une question visible, même sans voix dans la vidéo.</figcaption>
+                  <figcaption>
+                    L'OCR permet de conserver une question visible, même sans
+                    voix dans la vidéo.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/sous-titre.png">
-                    <img src="assets/rag/sous-titre.png" width="1381" height="777" loading="lazy" alt="Les sous-titres apportent un second signal pour corriger un mot mal entendu." />
+                  <a class="tile" href="assets/rag/sous-titre.webp">
+                    <img
+                      src="assets/rag/thumbs/sous-titre.webp"
+                      width="480"
+                      height="270"
+                      loading="lazy"
+                      alt="Les sous-titres apportent un second signal pour corriger un mot mal entendu."
+                    />
                   </a>
-                  <figcaption>Les sous-titres apportent un second signal pour corriger un mot mal entendu.</figcaption>
+                  <figcaption>
+                    Les sous-titres apportent un second signal pour corriger un
+                    mot mal entendu.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/info-speaker.png">
-                    <img src="assets/rag/info-speaker.png" width="692" height="166" loading="lazy" alt="Un cartouche à l&#x27;écran peut préciser le nom ou le rôle d&#x27;un intervenant." />
+                  <a class="tile" href="assets/rag/info-speaker.webp">
+                    <img
+                      src="assets/rag/thumbs/info-speaker.webp"
+                      width="480"
+                      height="115"
+                      loading="lazy"
+                      alt="Un cartouche à l&#x27;écran peut préciser le nom ou le rôle d&#x27;un intervenant."
+                    />
                   </a>
-                  <figcaption>Un cartouche à l'écran peut préciser le nom ou le rôle d'un intervenant.</figcaption>
+                  <figcaption>
+                    Un cartouche à l'écran peut préciser le nom ou le rôle d'un
+                    intervenant.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/video_type.png">
-                    <img src="assets/rag/video_type.png" width="682" height="369" loading="lazy" alt="Le pipeline identifie le format de la vidéo pour adapter son traitement." />
+                  <a class="tile" href="assets/rag/video_type.webp">
+                    <img
+                      src="assets/rag/thumbs/video_type.webp"
+                      width="480"
+                      height="260"
+                      loading="lazy"
+                      alt="Le pipeline identifie le format de la vidéo pour adapter son traitement."
+                    />
                   </a>
-                  <figcaption>Le pipeline identifie le format de la vidéo pour adapter son traitement.</figcaption>
+                  <figcaption>
+                    Le pipeline identifie le format de la vidéo pour adapter son
+                    traitement.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/screenshot_pipeline_prepa_video.png">
-                    <img src="assets/rag/screenshot_pipeline_prepa_video.png" width="1978" height="1202" loading="lazy" alt="Aperçu de l&#x27;explorateur du pipeline de préparation des vidéos" />
+                  <a
+                    class="tile"
+                    href="assets/rag/screenshot_pipeline_prepa_video.webp"
+                  >
+                    <img
+                      src="assets/rag/thumbs/screenshot_pipeline_prepa_video.webp"
+                      width="480"
+                      height="292"
+                      loading="lazy"
+                      alt="Aperçu de l&#x27;explorateur du pipeline de préparation des vidéos"
+                    />
                   </a>
-                  <figcaption>Aperçu de l'explorateur du pipeline de préparation.</figcaption>
+                  <figcaption>
+                    Aperçu de l'explorateur du pipeline de préparation.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/transcript_enrichi.png">
-                    <img src="assets/rag/transcript_enrichi.png" width="1064" height="853" loading="lazy" alt="Exemple de transcript enrichi avec timecodes, speakers et questions posées" />
+                  <a class="tile" href="assets/rag/transcript_enrichi.webp">
+                    <img
+                      src="assets/rag/thumbs/transcript_enrichi.webp"
+                      width="480"
+                      height="385"
+                      loading="lazy"
+                      alt="Exemple de transcript enrichi avec timecodes, speakers et questions posées"
+                    />
                   </a>
-                  <figcaption>Exemple de transcript enrichi (timecodes, speakers, questions posées).</figcaption>
+                  <figcaption>
+                    Exemple de transcript enrichi (timecodes, speakers,
+                    questions posées).
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/transcript_classique.png">
-                    <img src="assets/rag/transcript_classique.png" width="1053" height="409" loading="lazy" alt="Exemple de transcript classique découpé en chunks" />
+                  <a class="tile" href="assets/rag/transcript_classique.webp">
+                    <img
+                      src="assets/rag/thumbs/transcript_classique.webp"
+                      width="480"
+                      height="186"
+                      loading="lazy"
+                      alt="Exemple de transcript classique découpé en chunks"
+                    />
                   </a>
-                  <figcaption>Exemple de transcript classique, celui qui est découpé en chunks.</figcaption>
+                  <figcaption>
+                    Exemple de transcript classique, celui qui est découpé en
+                    chunks.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/exemple_artefacts.png">
-                    <img src="assets/rag/exemple_artefacts.png" width="502" height="445" loading="lazy" alt="Exemple d&#x27;organisation des artefacts d&#x27;une vidéo" />
+                  <a class="tile" href="assets/rag/exemple_artefacts.webp">
+                    <img
+                      src="assets/rag/thumbs/exemple_artefacts.webp"
+                      width="480"
+                      height="425"
+                      loading="lazy"
+                      alt="Exemple d&#x27;organisation des artefacts d&#x27;une vidéo"
+                    />
                   </a>
-                  <figcaption>Exemple d'artefacts produits pour une vidéo.</figcaption>
+                  <figcaption>
+                    Exemple d'artefacts produits pour une vidéo.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/table_sql.png">
-                    <img src="assets/rag/table_sql.png" width="1562" height="766" loading="lazy" alt="Exemple de table PostgreSQL contenant les chunks et leurs embeddings" />
+                  <a class="tile" href="assets/rag/table_sql.webp">
+                    <img
+                      src="assets/rag/thumbs/table_sql.webp"
+                      width="480"
+                      height="235"
+                      loading="lazy"
+                      alt="Exemple de table PostgreSQL contenant les chunks et leurs embeddings"
+                    />
                   </a>
-                  <figcaption>Exemple de table PostgreSQL pour les chunks et embeddings.</figcaption>
+                  <figcaption>
+                    Exemple de table PostgreSQL pour les chunks et embeddings.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/cases_test_embedding.png">
-                    <img src="assets/rag/cases_test_embedding.png" width="2013" height="733" loading="lazy" alt="Exemples de cas de test utilisés pour évaluer les embeddings" />
+                  <a class="tile" href="assets/rag/cases_test_embedding.webp">
+                    <img
+                      src="assets/rag/thumbs/cases_test_embedding.webp"
+                      width="480"
+                      height="175"
+                      loading="lazy"
+                      alt="Exemples de cas de test utilisés pour évaluer les embeddings"
+                    />
                   </a>
-                  <figcaption>Exemples de questions utilisées pour le test.</figcaption>
+                  <figcaption>
+                    Exemples de questions utilisées pour le test.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/infos_en_base.png">
-                    <img src="assets/rag/infos_en_base.png" width="1580" height="580" loading="lazy" alt="Exemple de table PostgreSQL contenant les métadonnées des vidéos" />
+                  <a class="tile" href="assets/rag/infos_en_base.webp">
+                    <img
+                      src="assets/rag/thumbs/infos_en_base.webp"
+                      width="480"
+                      height="176"
+                      loading="lazy"
+                      alt="Exemple de table PostgreSQL contenant les métadonnées des vidéos"
+                    />
                   </a>
-                  <figcaption>Exemple des métadonnées des vidéos enregistrées dans PostgreSQL.</figcaption>
+                  <figcaption>
+                    Exemple des métadonnées des vidéos enregistrées dans
+                    PostgreSQL.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/langsmith_studio_graph.png">
-                    <img src="assets/rag/langsmith_studio_graph.png" width="1235" height="910" loading="lazy" alt="Graphe LangGraph du pipeline de réponse dans LangSmith Studio, avec le sous-graphe de recherche déplié" />
+                  <a class="tile" href="assets/rag/langsmith_studio_graph.webp">
+                    <img
+                      src="assets/rag/thumbs/langsmith_studio_graph.webp"
+                      width="480"
+                      height="354"
+                      loading="lazy"
+                      alt="Graphe LangGraph du pipeline de réponse dans LangSmith Studio, avec le sous-graphe de recherche déplié"
+                    />
                   </a>
-                  <figcaption>Le graphe LangGraph complet dans LangSmith Studio : la recherche (sous-graphe orchestrate), puis la génération, la finalisation et l'enregistrement.</figcaption>
+                  <figcaption>
+                    Le graphe LangGraph complet dans LangSmith Studio : la
+                    recherche (sous-graphe orchestrate), puis la génération, la
+                    finalisation et l'enregistrement.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/llm_reponse_output.png">
-                    <img src="assets/rag/llm_reponse_output.png" width="1100" height="725" loading="lazy" alt="Exemple de sortie JSON produite par le LLM de réponse" />
+                  <a class="tile" href="assets/rag/llm_reponse_output.webp">
+                    <img
+                      src="assets/rag/thumbs/llm_reponse_output.webp"
+                      width="480"
+                      height="316"
+                      loading="lazy"
+                      alt="Exemple de sortie JSON produite par le LLM de réponse"
+                    />
                   </a>
-                  <figcaption>Exemple de sortie JSON du LLM de réponse : la réponse, l'action choisie (répondre ou s'abstenir) et les sources utilisées.</figcaption>
+                  <figcaption>
+                    Exemple de sortie JSON du LLM de réponse : la réponse,
+                    l'action choisie (répondre ou s'abstenir) et les sources
+                    utilisées.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/phoenix.png">
-                    <img src="assets/rag/phoenix.png" width="1432" height="1181" loading="lazy" alt="Interface Phoenix affichant les traces OpenTelemetry du pipeline de réponse" />
+                  <a class="tile" href="assets/rag/phoenix.webp">
+                    <img
+                      src="assets/rag/thumbs/phoenix.webp"
+                      width="480"
+                      height="396"
+                      loading="lazy"
+                      alt="Interface Phoenix affichant les traces OpenTelemetry du pipeline de réponse"
+                    />
                   </a>
-                  <figcaption>Exemple de trace du pipeline dans Phoenix.</figcaption>
+                  <figcaption>
+                    Exemple de trace du pipeline dans Phoenix.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/memory.png">
-                    <img src="assets/rag/memory.png" width="1447" height="1123" loading="lazy" alt="Représentation de la mémoire conversationnelle" />
+                  <a class="tile" href="assets/rag/memory.webp">
+                    <img
+                      src="assets/rag/thumbs/memory.webp"
+                      width="480"
+                      height="373"
+                      loading="lazy"
+                      alt="Représentation de la mémoire conversationnelle"
+                    />
                   </a>
-                  <figcaption>Exemple de mémoire conversationnelle envoyée au LLM de reformulation au tour suivant.</figcaption>
+                  <figcaption>
+                    Exemple de mémoire conversationnelle envoyée au LLM de
+                    reformulation au tour suivant.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/llm_reformulation_output.png">
-                    <img src="assets/rag/llm_reformulation_output.png" width="719" height="306" loading="lazy" alt="Exemple de sortie du LLM de reformulation" />
+                  <a
+                    class="tile"
+                    href="assets/rag/llm_reformulation_output.webp"
+                  >
+                    <img
+                      src="assets/rag/thumbs/llm_reformulation_output.webp"
+                      width="480"
+                      height="204"
+                      loading="lazy"
+                      alt="Exemple de sortie du LLM de reformulation"
+                    />
                   </a>
-                  <figcaption>Exemple de sortie du LLM de reformulation : la clé follow_up indique s’il y a un changement de sujet ou non.</figcaption>
+                  <figcaption>
+                    Exemple de sortie du LLM de reformulation : la clé follow_up
+                    indique s’il y a un changement de sujet ou non.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/golden-dataset.png">
-                    <img src="assets/rag/golden-dataset.png" width="1278" height="515" loading="lazy" alt="Golden dataset utilisé pour le benchmark Phoenix" />
+                  <a class="tile" href="assets/rag/golden-dataset.webp">
+                    <img
+                      src="assets/rag/thumbs/golden-dataset.webp"
+                      width="480"
+                      height="193"
+                      loading="lazy"
+                      alt="Golden dataset utilisé pour le benchmark Phoenix"
+                    />
                   </a>
-                  <figcaption>Extrait du golden dataset utilisé pour le benchmark Phoenix.</figcaption>
+                  <figcaption>
+                    Extrait du golden dataset utilisé pour le benchmark Phoenix.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/benchmark1.png">
-                    <img src="assets/rag/benchmark1.png" width="1966" height="1175" loading="lazy" alt="Premier aperçu des résultats du benchmark Phoenix" />
+                  <a class="tile" href="assets/rag/benchmark1.webp">
+                    <img
+                      src="assets/rag/thumbs/benchmark1.webp"
+                      width="480"
+                      height="287"
+                      loading="lazy"
+                      alt="Premier aperçu des résultats du benchmark Phoenix"
+                    />
                   </a>
                   <figcaption>Résultats du benchmark Phoenix.</figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/benchmark2.png">
-                    <img src="assets/rag/benchmark2.png" width="1960" height="1188" loading="lazy" alt="Second aperçu des résultats du benchmark Phoenix" />
+                  <a class="tile" href="assets/rag/benchmark2.webp">
+                    <img
+                      src="assets/rag/thumbs/benchmark2.webp"
+                      width="480"
+                      height="291"
+                      loading="lazy"
+                      alt="Second aperçu des résultats du benchmark Phoenix"
+                    />
                   </a>
-                  <figcaption>Résultats détaillés du benchmark Phoenix.</figcaption>
+                  <figcaption>
+                    Résultats détaillés du benchmark Phoenix.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/vm_scaleway.png">
-                    <img src="assets/rag/vm_scaleway.png" width="2164" height="726" loading="lazy" alt="Machine virtuelle GPU Scaleway utilisée pour traiter les vidéos" />
+                  <a class="tile" href="assets/rag/vm_scaleway.webp">
+                    <img
+                      src="assets/rag/thumbs/vm_scaleway.webp"
+                      width="480"
+                      height="161"
+                      loading="lazy"
+                      alt="Machine virtuelle GPU Scaleway utilisée pour traiter les vidéos"
+                    />
                   </a>
-                  <figcaption>La VM GPU Scaleway attend un job avant d’être allumée pour traiter les nouvelles vidéos.</figcaption>
+                  <figcaption>
+                    La VM GPU Scaleway attend un job avant d’être allumée pour
+                    traiter les nouvelles vidéos.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/table_stats.png">
-                    <img src="assets/rag/table_stats.png" width="1552" height="1134" loading="lazy" alt="Exemple de table de suivi des mises à jour" />
+                  <a class="tile" href="assets/rag/table_stats.webp">
+                    <img
+                      src="assets/rag/thumbs/table_stats.webp"
+                      width="480"
+                      height="351"
+                      loading="lazy"
+                      alt="Exemple de table de suivi des mises à jour"
+                    />
                   </a>
-                  <figcaption>Exemple de table de suivi de l’état des mises à jour.</figcaption>
+                  <figcaption>
+                    Exemple de table de suivi de l’état des mises à jour.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/vps_infomaniak.png">
-                    <img src="assets/rag/vps_infomaniak.png" width="2171" height="724" loading="lazy" alt="VPS Infomaniak hébergeant le RAG" />
+                  <a class="tile" href="assets/rag/vps_infomaniak.webp">
+                    <img
+                      src="assets/rag/thumbs/vps_infomaniak.webp"
+                      width="480"
+                      height="160"
+                      loading="lazy"
+                      alt="VPS Infomaniak hébergeant le RAG"
+                    />
                   </a>
                   <figcaption>VPS Infomaniak qui héberge le RAG.</figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/gpu_dispo.png">
-                    <img src="assets/rag/gpu_dispo.png" width="594" height="371" loading="lazy" alt="Résultat du contrôle de disponibilité des GPU Scaleway" />
+                  <a class="tile" href="assets/rag/gpu_dispo.webp">
+                    <img
+                      src="assets/rag/thumbs/gpu_dispo.webp"
+                      width="480"
+                      height="300"
+                      loading="lazy"
+                      alt="Résultat du contrôle de disponibilité des GPU Scaleway"
+                    />
                   </a>
-                  <figcaption>Exemple de résultat du contrôle de disponibilité des GPU.</figcaption>
+                  <figcaption>
+                    Exemple de résultat du contrôle de disponibilité des GPU.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/keyword1.png">
-                    <img src="assets/rag/keyword1.png" width="1388" height="779" loading="lazy" alt="Premier screenshot d’un mot-clé détecté par OCR" />
+                  <a class="tile" href="assets/rag/keyword1.webp">
+                    <img
+                      src="assets/rag/thumbs/keyword1.webp"
+                      width="480"
+                      height="269"
+                      loading="lazy"
+                      alt="Premier screenshot d’un mot-clé détecté par OCR"
+                    />
                   </a>
                   <figcaption>Exemple d’images envoyées à GPT.</figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/keyword2.png">
-                    <img src="assets/rag/keyword2.png" width="1396" height="783" loading="lazy" alt="Second screenshot d’un mot-clé détecté par OCR" />
+                  <a class="tile" href="assets/rag/keyword2.webp">
+                    <img
+                      src="assets/rag/thumbs/keyword2.webp"
+                      width="480"
+                      height="269"
+                      loading="lazy"
+                      alt="Second screenshot d’un mot-clé détecté par OCR"
+                    />
                   </a>
                   <figcaption>Exemple d’images envoyées à GPT.</figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/doublon.png">
-                    <img src="assets/rag/doublon.png" width="903" height="652" loading="lazy" alt="Interface Tkinter proposant la fusion de deux speakers aux orthographes proches" />
+                  <a class="tile" href="assets/rag/doublon.webp">
+                    <img
+                      src="assets/rag/thumbs/doublon.webp"
+                      width="480"
+                      height="347"
+                      loading="lazy"
+                      alt="Interface Tkinter proposant la fusion de deux speakers aux orthographes proches"
+                    />
                   </a>
-                  <figcaption>Exemple de rapprochement proposé par l’outil.</figcaption>
+                  <figcaption>
+                    Exemple de rapprochement proposé par l’outil.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/02_11.jpg">
-                    <img src="assets/rag/02_11.jpg" width="1280" height="720" loading="lazy" alt="Premier exemple de texte détecté dans une vidéo" />
+                  <a class="tile" href="assets/rag/02_11.webp">
+                    <img
+                      src="assets/rag/thumbs/02_11.webp"
+                      width="480"
+                      height="270"
+                      loading="lazy"
+                      alt="Premier exemple de texte détecté dans une vidéo"
+                    />
                   </a>
-                  <figcaption>Premier exemple de texte détecté dans une vidéo.</figcaption>
+                  <figcaption>
+                    Premier exemple de texte détecté dans une vidéo.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/02_11_500.jpg">
-                    <img src="assets/rag/02_11_500.jpg" width="1280" height="720" loading="lazy" alt="Deuxième exemple de texte détecté dans une vidéo" />
+                  <a class="tile" href="assets/rag/02_11_500.webp">
+                    <img
+                      src="assets/rag/thumbs/02_11_500.webp"
+                      width="480"
+                      height="270"
+                      loading="lazy"
+                      alt="Deuxième exemple de texte détecté dans une vidéo"
+                    />
                   </a>
-                  <figcaption>Deuxième exemple de texte détecté dans une vidéo.</figcaption>
+                  <figcaption>
+                    Deuxième exemple de texte détecté dans une vidéo.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/exp-phoenix-llm.png">
-                    <img src="assets/rag/exp-phoenix-llm.png" width="940" height="733" loading="lazy" alt="Expérience Phoenix comparant les performances de fournisseurs LLM" />
+                  <a class="tile" href="assets/rag/exp-phoenix-llm.webp">
+                    <img
+                      src="assets/rag/thumbs/exp-phoenix-llm.webp"
+                      width="480"
+                      height="374"
+                      loading="lazy"
+                      alt="Expérience Phoenix comparant les performances de fournisseurs LLM"
+                    />
                   </a>
-                  <figcaption>Expérience Phoenix exécutée en lot pour comparer les LLM.</figcaption>
+                  <figcaption>
+                    Expérience Phoenix exécutée en lot pour comparer les LLM.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/interface_test_payload.png">
-                    <img src="assets/rag/interface_test_payload.png" width="1573" height="1180" loading="lazy" alt="Interface de test des payloads envoyés aux fournisseurs LLM" />
+                  <a class="tile" href="assets/rag/interface_test_payload.webp">
+                    <img
+                      src="assets/rag/thumbs/interface_test_payload.webp"
+                      width="480"
+                      height="360"
+                      loading="lazy"
+                      alt="Interface de test des payloads envoyés aux fournisseurs LLM"
+                    />
                   </a>
-                  <figcaption>Interface de test des payloads envoyés par les fournisseurs LLM. Ici il est demandé de répondre en texte brut, contrairement au json_schema dans le RAG.</figcaption>
+                  <figcaption>
+                    Interface de test des payloads envoyés par les fournisseurs
+                    LLM. Ici il est demandé de répondre en texte brut,
+                    contrairement au json_schema dans le RAG.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/exemple-sous-titre-diffcile.png">
-                    <img src="assets/rag/exemple-sous-titre-diffcile.png" width="1381" height="778" loading="lazy" alt="Exemple difficile où les sous-titres sont proches de textes dans le décor" />
+                  <a
+                    class="tile"
+                    href="assets/rag/exemple-sous-titre-diffcile.webp"
+                  >
+                    <img
+                      src="assets/rag/thumbs/exemple-sous-titre-diffcile.webp"
+                      width="480"
+                      height="270"
+                      loading="lazy"
+                      alt="Exemple difficile où les sous-titres sont proches de textes dans le décor"
+                    />
                   </a>
-                  <figcaption>Exemple difficile : les sous-titres sont proches de textes dans le décor.</figcaption>
+                  <figcaption>
+                    Exemple difficile : les sous-titres sont proches de textes
+                    dans le décor.
+                  </figcaption>
                 </figure>
                 <figure class="mosaic-item">
-                  <a class="tile" href="assets/rag/github_classifier.png">
-                    <img src="assets/rag/github_classifier.png" width="1332" height="1169" loading="lazy" alt="Dépôt GitHub du classifieur d’images" />
+                  <a class="tile" href="assets/rag/github_classifier.webp">
+                    <img
+                      src="assets/rag/thumbs/github_classifier.webp"
+                      width="480"
+                      height="421"
+                      loading="lazy"
+                      alt="Dépôt GitHub du classifieur d’images"
+                    />
                   </a>
                   <figcaption>Dépôt GitHub du classifieur d’images.</figcaption>
                 </figure>
