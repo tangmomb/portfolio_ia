@@ -100,8 +100,17 @@
 
               <ul class="details">
                 <li>
-                  <strong>Agents.</strong> Un <span class="agent agent-orchestrator">orchestrateur</span> délègue à un <span class="agent agent-dataset-builder">Dataset Builder</span>, un <span class="agent agent-model-researcher">Model Researcher</span> et un <span class="agent agent-evaluator">Evaluator</span>, puis décide du
-                  cycle suivant à partir de leurs rapports.
+                  <strong>Agents.</strong> Un
+                  <span class="agent agent-orchestrator">orchestrateur</span>
+                  délègue à un
+                  <span class="agent agent-dataset-builder"
+                    >Dataset Builder</span
+                  >, un
+                  <span class="agent agent-model-researcher"
+                    >Model Researcher</span
+                  >
+                  et un <span class="agent agent-evaluator">Evaluator</span>,
+                  puis décide du cycle suivant à partir de leurs rapports.
                 </li>
                 <li>
                   <strong>Annotation.</strong> Des vidéos YouTube sont annotées
@@ -947,31 +956,10 @@
                 <li>
                   <strong>Données synthétiques.</strong> 4 jeux de 5 000
                   exemples synthétiques, validés par un contrôle déterministe et
-                  un juge LLM. Le gain maximal mesuré reste faible : +1,26
-                  point.
+                  un juge LLM.
                 </li>
               </ul>
 
-              <ul class="tags" aria-label="Technologies">
-                <li>LoRA</li>
-                <li>Qwen 3.5</li>
-                <li>Spider</li>
-                <li>SQLite</li>
-                <li>Python</li>
-              </ul>
-
-              <div class="actions">
-                <a
-                  class="button button-accent"
-                  href="https://github.com/tangmomb/fine-tuning"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Code sur GitHub</a
-                >
-              </div>
-            </div>
-
-            <div class="project-media">
               <figure class="chart">
                 <figcaption>
                   <strong
@@ -1032,30 +1020,124 @@
                   </div>
                 </div>
               </figure>
+
+              <ul class="tags" aria-label="Technologies">
+                <li>LoRA</li>
+                <li>Qwen 3.5</li>
+                <li>Spider</li>
+                <li>SQLite</li>
+                <li>Python</li>
+              </ul>
+
+              <div class="actions">
+                <a
+                  class="button button-accent"
+                  href="https://fine-tuning.tanguym.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Voir le suivi du projet</a
+                >
+                <a
+                  class="button"
+                  href="https://github.com/tangmomb/fine-tuning"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code sur GitHub</a
+                >
+              </div>
+            </div>
+
+            <div class="project-media">
               <div class="mosaic">
-                <figure class="mosaic-item" aria-hidden="true">
-                  <div class="tile tile-empty">Image à venir</div>
-                  <figcaption>Description à venir</figcaption>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/lora/donnees.webp">
+                    <img
+                      src="assets/lora/thumbs/donnees.webp"
+                      width="480"
+                      height="437"
+                      loading="lazy"
+                      alt="Données : 206 bases réparties entre train, validation et test sans recouvrement, avec les longueurs en tokens."
+                    />
+                  </a>
+                  <figcaption>
+                    Données : 206 bases réparties entre train, validation et
+                    test sans recouvrement, avec les longueurs en tokens.
+                  </figcaption>
                 </figure>
-                <figure class="mosaic-item" aria-hidden="true">
-                  <div class="tile tile-empty">Image à venir</div>
-                  <figcaption>Description à venir</figcaption>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/lora/modeles-bruts.webp">
+                    <img
+                      src="assets/lora/thumbs/modeles-bruts.webp"
+                      width="480"
+                      height="447"
+                      loading="lazy"
+                      alt="Modèles bruts : les Qwen testés sur les 2 147 requêtes du jeu de test, avant fine-tuning."
+                    />
+                  </a>
+                  <figcaption>
+                    Modèles bruts : les Qwen testés sur les 2 147 requêtes du
+                    jeu de test, avant fine-tuning.
+                  </figcaption>
                 </figure>
-                <figure class="mosaic-item" aria-hidden="true">
-                  <div class="tile tile-empty">Image à venir</div>
-                  <figcaption>Description à venir</figcaption>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/lora/entrainements.webp">
+                    <img
+                      src="assets/lora/thumbs/entrainements.webp"
+                      width="480"
+                      height="304"
+                      loading="lazy"
+                      alt="Entraînements : adaptateurs LoRA comparés, checkpoint choisi sur la validation avant l'évaluation finale."
+                    />
+                  </a>
+                  <figcaption>
+                    Entraînements : adaptateurs LoRA comparés, checkpoint choisi
+                    sur la validation avant l'évaluation finale.
+                  </figcaption>
                 </figure>
-                <figure class="mosaic-item" aria-hidden="true">
-                  <div class="tile tile-empty">Image à venir</div>
-                  <figcaption>Description à venir</figcaption>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/lora/optimisation.webp">
+                    <img
+                      src="assets/lora/thumbs/optimisation.webp"
+                      width="480"
+                      height="384"
+                      loading="lazy"
+                      alt="Optimisation : différentes configurations LoRA testées sur le Qwen 3.5 2B, à données et protocole identiques."
+                    />
+                  </a>
+                  <figcaption>
+                    Optimisation : différentes configurations LoRA testées sur
+                    le Qwen 3.5 2B, à données et protocole identiques.
+                  </figcaption>
                 </figure>
-                <figure class="mosaic-item" aria-hidden="true">
-                  <div class="tile tile-empty">Image à venir</div>
-                  <figcaption>Description à venir</figcaption>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/lora/data-scaling.webp">
+                    <img
+                      src="assets/lora/thumbs/data-scaling.webp"
+                      width="480"
+                      height="294"
+                      loading="lazy"
+                      alt="Data scaling : effet du volume de données d'entraînement sur l'execution accuracy."
+                    />
+                  </a>
+                  <figcaption>
+                    Data scaling : effet du volume de données d'entraînement sur
+                    l'execution accuracy.
+                  </figcaption>
                 </figure>
-                <figure class="mosaic-item" aria-hidden="true">
-                  <div class="tile tile-empty">Image à venir</div>
-                  <figcaption>Description à venir</figcaption>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/lora/quelles-donnees.webp">
+                    <img
+                      src="assets/lora/thumbs/quelles-donnees.webp"
+                      width="480"
+                      height="480"
+                      loading="lazy"
+                      alt="Choix des données : génération et contrôle de nouveaux jeux, puis analyse de ceux qui font progresser le modèle."
+                    />
+                  </a>
+                  <figcaption>
+                    Choix des données : génération et contrôle de nouveaux jeux,
+                    puis analyse de ceux qui font progresser le modèle.
+                  </figcaption>
                 </figure>
               </div>
             </div>
