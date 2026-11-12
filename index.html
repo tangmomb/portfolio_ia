@@ -6,7 +6,7 @@
     <title>Tanguy Mombert · Ingénieur IA junior</title>
     <meta
       name="description"
-      content="Trois projets d'IA de Tanguy Mombert, ingénieur IA junior : pipeline multi-agents, RAG en production et fine-tuning LoRA, avec leurs mesures."
+      content="Quatre projets d'IA de Tanguy Mombert, ingénieur IA junior : pipeline multi-agents, RAG en production, fine-tuning LoRA et assistant de recherche d'emploi à base d'agents LLM, avec leurs mesures."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://portfolio-ia.tanguym.fr/" />
@@ -15,7 +15,7 @@
     <meta property="og:title" content="Tanguy Mombert · Ingénieur IA junior" />
     <meta
       property="og:description"
-      content="Pipeline multi-agents, RAG en production et fine-tuning LoRA, avec leurs mesures."
+      content="Pipeline multi-agents, RAG en production, fine-tuning LoRA et assistant de recherche d'emploi à base d'agents LLM, avec leurs mesures."
     />
     <link rel="icon" href="favicon.png" type="image/png" />
     <link
@@ -34,13 +34,14 @@
         <div class="inner">
           <p class="eyebrow">Tanguy Mombert · Ingénieur IA junior</p>
           <h1>Bonjour</h1>
-          <p class="lead">Voici mes 3 derniers projets IA.</p>
+          <p class="lead">Voici mes 4 derniers projets IA.</p>
           <nav class="summary" aria-label="Projets">
             <a href="#agents"
               ><span>01</span> Agents IA de détection de montage</a
             >
             <a href="#rag"><span>02</span> RAG sur des vidéos YouTube</a>
             <a href="#lora"><span>03</span> Fine-tuning LoRA text-to-SQL</a>
+            <a href="#assistant"><span>04</span> Assistant de recherche d'emploi</a>
           </nav>
         </div>
       </header>
@@ -1137,6 +1138,192 @@
                   <figcaption>
                     Choix des données : génération et contrôle de nouveaux jeux,
                     puis analyse de ceux qui font progresser le modèle.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="assistant" class="section project">
+          <div class="inner project-grid">
+            <div class="project-text">
+              <p class="eyebrow">Projet 04 · Agents LLM, automatisation</p>
+              <h2>Un assistant de recherche d'emploi à base d'agents LLM</h2>
+              <p class="lead">
+                Il cherche des offres sur LinkedIn, Welcome to the Jungle et
+                Indeed, les fait évaluer par un LLM face à mon profil, prépare
+                <span class="highlight"
+                  >un brouillon de lettre pour celles qui correspondent</span
+                >
+                et suit les réponses des recruteurs par e-mail, le tout dans un
+                Google Sheet.
+              </p>
+
+              <div class="results">
+                <p class="results-title">Une session type</p>
+                <dl class="results-list">
+                  <div>
+                    <dt>Offres lues</dt>
+                    <dd>20 au plus, sur 3 sites</dd>
+                  </div>
+                  <div>
+                    <dt>Évaluation</dt>
+                    <dd>en lot (API Batch)</dd>
+                  </div>
+                  <div>
+                    <dt>Coût d'une session</dt>
+                    <dd>≈ 0,07 $</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <ul class="details">
+                <li>
+                  <strong>Évaluation par lot.</strong> Chaque offre lue est
+                  notée bon, moyen ou faible avec la raison, en un seul lot via
+                  l'API Batch de Mistral.
+                </li>
+                <li>
+                  <strong>Rien d'inventé.</strong> Les brouillons de lettre ne
+                  s'appuient que sur le profil ; une lettre incomplète ou non
+                  signée est bloquée.
+                </li>
+                <li>
+                  <strong>Suivi par e-mail.</strong> Un LLM classe les e-mails
+                  reçus (accusé, refus, entretien), puis le code vérifie le
+                  rattachement à l'offre avant d'écrire dans le Sheet.
+                </li>
+                <li>
+                  <strong>Garde-fous.</strong> Rythme volontairement lent, aucune
+                  vérification anti-robot contournée, contenu des pages traité
+                  comme une donnée (protection contre l'injection de consignes).
+                </li>
+                <li>
+                  <strong>Mode optionnel.</strong> Un agent à outils remplit les
+                  formulaires intégrés, une action à la fois, guidé par un
+                  journal tenu par Python et une page relue une fois stable.
+                </li>
+              </ul>
+
+              <ul class="tags" aria-label="Technologies">
+                <li>Agents LLM</li>
+                <li>Mistral (API Batch)</li>
+                <li>Playwright</li>
+                <li>Google Sheets</li>
+                <li>IMAP</li>
+                <li>Python</li>
+              </ul>
+
+              <div class="actions">
+                <a
+                  class="button button-accent"
+                  href="https://agent-job.tanguym.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Voir le fonctionnement</a
+                >
+                <a
+                  class="button"
+                  href="https://github.com/tangmomb/agent_job"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code sur GitHub</a
+                >
+              </div>
+            </div>
+
+            <div class="project-media">
+              <div class="mosaic">
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/assistant/presentation.webp">
+                    <img
+                      src="assets/assistant/thumbs/presentation.webp"
+                      width="480"
+                      height="521"
+                      loading="lazy"
+                      alt="Présentation : l'assistant trie les offres et prépare les brouillons, la candidature reste humaine par défaut."
+                    />
+                  </a>
+                  <figcaption>
+                    Présentation : l'assistant trie les offres et prépare les
+                    brouillons, la candidature reste humaine par défaut.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/assistant/evaluation.webp">
+                    <img
+                      src="assets/assistant/thumbs/evaluation.webp"
+                      width="480"
+                      height="598"
+                      loading="lazy"
+                      alt="Évaluation : le prompt envoyé en lot et la réponse JSON du LLM (match, notes, brouillon de lettre)."
+                    />
+                  </a>
+                  <figcaption>
+                    Évaluation : le prompt envoyé en lot et la réponse JSON du
+                    LLM (match, notes, brouillon de lettre).
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/assistant/emails.webp">
+                    <img
+                      src="assets/assistant/thumbs/emails.webp"
+                      width="480"
+                      height="552"
+                      loading="lazy"
+                      alt="Suivi par e-mail : classement par le LLM, puis double vérification avant d'écrire dans le Sheet."
+                    />
+                  </a>
+                  <figcaption>
+                    Suivi par e-mail : classement par le LLM, puis double
+                    vérification avant d'écrire dans le Sheet.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/assistant/lecture.webp">
+                    <img
+                      src="assets/assistant/thumbs/lecture.webp"
+                      width="480"
+                      height="830"
+                      loading="lazy"
+                      alt="Lecture d'un formulaire : le HTML de la page et le résumé JSON que le script en tire pour le LLM."
+                    />
+                  </a>
+                  <figcaption>
+                    Lecture d'un formulaire : le HTML de la page et le résumé
+                    JSON que le script en tire pour le LLM.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/assistant/journal.webp">
+                    <img
+                      src="assets/assistant/thumbs/journal.webp"
+                      width="480"
+                      height="454"
+                      loading="lazy"
+                      alt="Journal de session dans le Sheet : offres, e-mails, appels, tokens et coût."
+                    />
+                  </a>
+                  <figcaption>
+                    Journal de session dans le Sheet : offres, e-mails, appels,
+                    tokens et coût.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/assistant/outils.webp">
+                    <img
+                      src="assets/assistant/thumbs/outils.webp"
+                      width="480"
+                      height="330"
+                      loading="lazy"
+                      alt="Outils de l'agent (mode optionnel) : remplir, cocher, choisir, coller la lettre préparée, laisser un champ vide, cliquer."
+                    />
+                  </a>
+                  <figcaption>
+                    Outils de l'agent (mode optionnel) : remplir, cocher,
+                    choisir, coller la lettre préparée, laisser un champ vide,
+                    cliquer.
                   </figcaption>
                 </figure>
               </div>
