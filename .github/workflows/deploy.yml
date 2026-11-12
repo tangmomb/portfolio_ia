@@ -1,0 +1,38 @@
+name: Mise en ligne
+
+# À chaque push sur master, demande au VPS Infomaniak de récupérer la dernière version du site
+# (/srv/portfolio_ia, servi par Caddy). La clé VPS_SSH_KEY ne peut lancer que
+# `systemctl start site-pull@portfolio_ia.service` sur le serveur.
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: mise-en-ligne
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Mettre à jour le site sur le VPS
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy
+          chmod 600 ~/.ssh/deploy
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -i ~/.ssh/deploy -o IdentitiesOnly=yes -o BatchMode=yes ubuntu@179.237.98.117
+
+      - name: Vérifier la version en ligne
+        run: |
+          for i in 1 2 3 4 5 6; do
+            if curl -fsS "https://portfolio-ia.tanguym.fr/" -o /dev/null; then exit 0; fi
+            sleep 5
+          done
+          echo "Le site ne répond pas." >&2
+          exit 1
