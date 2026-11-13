@@ -296,6 +296,18 @@ h2 {
   aspect-ratio: auto;
 }
 
+/* Mosaïque à une seule image : elle remplit la hauteur du texte. */
+.mosaic:has(> .mosaic-item:only-child) {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0;
+}
+
+.mosaic-item:only-child {
+  flex: 1;
+  min-height: 0;
+}
+
 a.tile {
   cursor: zoom-in;
 }
@@ -762,6 +774,11 @@ html:has(.lightbox[open]) {
   .project-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
+  }
+
+  .mosaic-item:only-child .tile {
+    flex: none;
+    aspect-ratio: 10 / 9;
   }
 }
 

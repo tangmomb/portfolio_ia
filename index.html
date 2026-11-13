@@ -6,7 +6,7 @@
     <title>Tanguy Mombert · Ingénieur IA junior</title>
     <meta
       name="description"
-      content="Quatre projets d'IA de Tanguy Mombert, ingénieur IA junior : pipeline multi-agents, RAG en production, fine-tuning LoRA et assistant de recherche d'emploi à base d'agents LLM, avec leurs mesures."
+      content="Cinq projets d'IA de Tanguy Mombert, ingénieur IA junior : pipeline multi-agents, RAG en production, fine-tuning LoRA, assistant de recherche d'emploi à base d'agents LLM et serveur MCP sécurisé, avec leurs mesures."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://portfolio-ia.tanguym.fr/" />
@@ -15,7 +15,7 @@
     <meta property="og:title" content="Tanguy Mombert · Ingénieur IA junior" />
     <meta
       property="og:description"
-      content="Pipeline multi-agents, RAG en production, fine-tuning LoRA et assistant de recherche d'emploi à base d'agents LLM, avec leurs mesures."
+      content="Pipeline multi-agents, RAG en production, fine-tuning LoRA, assistant de recherche d'emploi à base d'agents LLM et serveur MCP sécurisé, avec leurs mesures."
     />
     <link rel="icon" href="favicon.png" type="image/png" />
     <link
@@ -34,7 +34,7 @@
         <div class="inner">
           <p class="eyebrow">Tanguy Mombert · Ingénieur IA junior</p>
           <h1>Bonjour</h1>
-          <p class="lead">Voici mes 4 derniers projets IA.</p>
+          <p class="lead">Voici mes 5 derniers projets IA.</p>
           <nav class="summary" aria-label="Projets">
             <a href="#agents"
               ><span>01</span> Agents IA de détection de montage</a
@@ -42,6 +42,7 @@
             <a href="#rag"><span>02</span> RAG sur des vidéos YouTube</a>
             <a href="#lora"><span>03</span> Fine-tuning LoRA text-to-SQL</a>
             <a href="#assistant"><span>04</span> Assistant de recherche d'emploi</a>
+            <a href="#mcp"><span>05</span> Serveur MCP de contact</a>
           </nav>
         </div>
       </header>
@@ -1324,6 +1325,75 @@
                     Outils de l'agent (mode optionnel) : remplir, cocher,
                     choisir, coller la lettre préparée, laisser un champ vide,
                     cliquer.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="mcp" class="section project">
+          <div class="inner project-grid">
+            <div class="project-text">
+              <p class="eyebrow">Projet 05 · MCP, sécurité</p>
+              <h2>Un serveur MCP pour me contacter</h2>
+              <p class="lead">
+                Deux outils privés, <code>send_email</code> et
+                <code>send_telegram</code>, permettent à mes projets IA de
+                <span class="highlight">m'envoyer un message</span>.
+              </p>
+
+              <ul class="details">
+                <li>
+                  <strong>Protocole.</strong> Model Context Protocol en
+                  Streamable HTTP (JSON-RPC 2.0), sorties SMTP et Telegram.
+                </li>
+                <li>
+                  <strong>Sécurité.</strong> Un jeton par projet (empreinte
+                  SHA-256), 5 envois/minute et 50/24 h, destinataires fixes,
+                  aucun message dans les journaux.
+                </li>
+              </ul>
+
+              <ul class="tags" aria-label="Technologies">
+                <li>MCP</li>
+                <li>JSON-RPC</li>
+                <li>Caddy</li>
+              </ul>
+
+              <div class="actions">
+                <a
+                  class="button button-accent"
+                  href="https://mcp-contact-me.tanguym.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Voir la référence</a
+                >
+                <a
+                  class="button"
+                  href="https://github.com/tangmomb/mcp_contact_me"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code sur GitHub</a
+                >
+              </div>
+            </div>
+
+            <div class="project-media">
+              <div class="mosaic">
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/mcp/reference.webp">
+                    <img
+                      src="assets/mcp/thumbs/reference.webp"
+                      width="480"
+                      height="432"
+                      loading="lazy"
+                      alt="Page de référence : endpoint, pile protocolaire, les deux outils avec leurs paramètres et la sécurité du serveur."
+                    />
+                  </a>
+                  <figcaption>
+                    Page de référence : endpoint, pile protocolaire, les deux
+                    outils avec leurs paramètres et la sécurité du serveur.
                   </figcaption>
                 </figure>
               </div>

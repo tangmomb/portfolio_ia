@@ -1,6 +1,6 @@
 # Portfolio IA
 
-Mes projets IA : agents, RAG, fine-tuning LoRA, assistant de recherche d'emploi.
+Mes projets IA : agents, RAG, fine-tuning LoRA, assistant de recherche d'emploi, serveur MCP de contact.
 
 **→ [portfolio-ia.tanguym.fr](https://portfolio-ia.tanguym.fr/)**
 
