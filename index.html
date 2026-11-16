@@ -240,9 +240,11 @@
                     systemd et Caddy ; calculs GPU déportés sur Modal.
                   </li>
                   <li>
-                    <strong>CI/CD.</strong> GitHub Actions vérifie la syntaxe
-                    Python et shell, met à jour les fonctions Modal modifiées,
-                    puis déploie sur le VPS.
+                    <strong>CI/CD.</strong> À chaque push, GitHub Actions lance
+                    ruff et 85 tests pytest, sans GPU ni appel d'API : étanchéité
+                    des splits par chaîne, seuil de précision, choix du modèle
+                    de production, budget des agents. Le déploiement ne part que
+                    si la CI réussit : fonctions Modal modifiées, puis VPS.
                   </li>
                   <li>
                     <strong>Continuité.</strong> Déploiement reporté si un run
@@ -271,6 +273,13 @@
                     L’orchestrateur peut explorer, mais seul le code sélectionne
                     un modèle après son test final, afin de garder un résultat
                     reproductible.
+                  </li>
+                  <li>
+                    <strong>Calculs sur Modal, VPS léger.</strong> Embeddings et
+                    entraînements tournent sur des GPU Modal à la demande
+                    (environ 1 $ de l'heure). Le VPS, partagé avec d'autres
+                    projets, ne fait qu'orchestrer et servir les interfaces,
+                    sans jamais être saturé.
                   </li>
                 </ul>
               </aside>
