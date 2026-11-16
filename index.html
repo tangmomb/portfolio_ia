@@ -201,8 +201,8 @@
                 <ul class="goals-list">
                   <li>
                     Améliorer le RAG du projet 02 et détecter les mots-clés,
-                    sous-titres, speakers <br />et chapitres d'une vidéo de
-                    manière fiable.
+                    sous-titres, speakers <br />et chapitres (non vocalisés)
+                    d'une vidéo de manière fiable.
                   </li>
                   <li>
                     N'envoyer en OCR que les images avec ajout, pour réduire les
@@ -210,6 +210,20 @@
                   </li>
                 </ul>
               </div>
+
+              <aside class="results deployment" aria-labelledby="agents-deployment-title">
+                <h3 class="results-title" id="agents-deployment-title">Déploiement &amp; CI/CD</h3>
+                <ul class="deployment-list">
+                  <li><strong>Infrastructure.</strong> Interfaces sur un VPS, avec
+                    systemd et Caddy ; calculs GPU déportés sur Modal.</li>
+                  <li><strong>CI/CD.</strong> GitHub Actions vérifie la syntaxe
+                    Python et shell, met à jour les fonctions Modal modifiées,
+                    puis déploie sur le VPS.</li>
+                  <li><strong>Continuité.</strong> Déploiement reporté si un run
+                    est en cours, avec une nouvelle tentative chaque heure.
+                    L'état des services est vérifié après redémarrage.</li>
+                </ul>
+              </aside>
 
               <div class="results">
                 <p class="results-title">
@@ -429,6 +443,28 @@
                 statistiques des vidéos de la chaîne.
               </p>
 
+              <div class="results goals">
+                <p class="results-title">Objectif</p>
+                <ul class="goals-list">
+                  <li>Pouvoir poser n'importe quelle question à propos de la chaîne YouTube.</li>
+                </ul>
+              </div>
+
+              <aside class="results deployment" aria-labelledby="rag-deployment-title">
+                <h3 class="results-title" id="rag-deployment-title">Déploiement &amp; CI/CD</h3>
+                <ul class="deployment-list">
+                  <li><strong>Infrastructure.</strong> Services Docker sur un VPS
+                    Contabo, derrière Caddy ; traitements GPU sur Modal.</li>
+                  <li><strong>CI/CD.</strong> GitHub Actions exécute les tests de
+                    configuration, construit les images concernées et les
+                    déploie avec une version liée au commit Git.</li>
+                  <li><strong>Validation.</strong> Les changements pouvant modifier
+                    la recherche passent un contrôle du rappel sur le jeu de
+                    référence, en préproduction. Retour automatique à la version
+                    précédente si le contrôle de santé de l'API échoue.</li>
+                </ul>
+              </aside>
+
               <div class="results">
                 <p class="results-title">Statistiques actuelles</p>
                 <dl class="results-list">
@@ -520,10 +556,6 @@
                     rel="noopener noreferrer"
                     >Voir le pipeline de préparation →</a
                   >
-                </li>
-                <li>
-                  <strong>Déploiement.</strong> Docker, Caddy et GitHub Actions,
-                  sur Scaleway (VM GPU, stockage objet) et un VPS Contabo.
                 </li>
               </ul>
 
