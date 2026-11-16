@@ -143,6 +143,29 @@ h2 {
   max-width: 65ch;
 }
 
+.hero-lead {
+  color: var(--foreground);
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  font-weight: 500;
+}
+
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 1rem;
+}
+
+.hero-proof li {
+  padding: 0.25rem 0.625rem;
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: #b9d0ff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
 .highlight {
   color: #fff;
 }
@@ -702,6 +725,47 @@ html:has(.lightbox[open]) {
   margin-top: 0.5rem;
 }
 
+/* Lecture rapide de chaque projet */
+.case-study {
+  margin-top: 1.25rem;
+  padding: 0.875rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-border);
+  border-radius: var(--radius);
+  background: rgba(15, 31, 63, 0.38);
+}
+
+.case-study-title {
+  margin-bottom: 0.625rem;
+  color: #b9d0ff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.case-study dl {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.case-study dl div {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: baseline;
+  font-size: 0.875rem;
+}
+
+.case-study dt {
+  color: #b9d0ff;
+  font-weight: 600;
+}
+
+.case-study dd {
+  color: var(--muted);
+}
+
 /* Déploiement : même format que les objectifs, accent bleu-vert */
 .deployment {
   border-color: rgba(94, 234, 212, 0.3);
@@ -933,6 +997,11 @@ html:has(.lightbox[open]) {
 }
 
 @media (max-width: 560px) {
+  .case-study dl div {
+    grid-template-columns: 1fr;
+    gap: 0.125rem;
+  }
+
   .lightbox.is-tall .lightbox-image {
     width: 100%;
     margin-bottom: 11rem;
