@@ -211,17 +211,28 @@
                 </ul>
               </div>
 
-              <aside class="results deployment" aria-labelledby="agents-deployment-title">
-                <h3 class="results-title" id="agents-deployment-title">Déploiement &amp; CI/CD</h3>
+              <aside
+                class="results deployment"
+                aria-labelledby="agents-deployment-title"
+              >
+                <h3 class="results-title" id="agents-deployment-title">
+                  Déploiement &amp; CI/CD
+                </h3>
                 <ul class="deployment-list">
-                  <li><strong>Infrastructure.</strong> Interfaces sur un VPS, avec
-                    systemd et Caddy ; calculs GPU déportés sur Modal.</li>
-                  <li><strong>CI/CD.</strong> GitHub Actions vérifie la syntaxe
+                  <li>
+                    <strong>Infrastructure.</strong> Interfaces sur un VPS, avec
+                    systemd et Caddy ; calculs GPU déportés sur Modal.
+                  </li>
+                  <li>
+                    <strong>CI/CD.</strong> GitHub Actions vérifie la syntaxe
                     Python et shell, met à jour les fonctions Modal modifiées,
-                    puis déploie sur le VPS.</li>
-                  <li><strong>Continuité.</strong> Déploiement reporté si un run
+                    puis déploie sur le VPS.
+                  </li>
+                  <li>
+                    <strong>Continuité.</strong> Déploiement reporté si un run
                     est en cours, avec une nouvelle tentative chaque heure.
-                    L'état des services est vérifié après redémarrage.</li>
+                    L'état des services est vérifié après redémarrage.
+                  </li>
                 </ul>
               </aside>
 
@@ -446,22 +457,36 @@
               <div class="results goals">
                 <p class="results-title">Objectif</p>
                 <ul class="goals-list">
-                  <li>Pouvoir poser n'importe quelle question à propos de la chaîne YouTube.</li>
+                  <li>
+                    Pouvoir poser n'importe quelle question à propos de la
+                    chaîne YouTube.
+                  </li>
                 </ul>
               </div>
 
-              <aside class="results deployment" aria-labelledby="rag-deployment-title">
-                <h3 class="results-title" id="rag-deployment-title">Déploiement &amp; CI/CD</h3>
+              <aside
+                class="results deployment"
+                aria-labelledby="rag-deployment-title"
+              >
+                <h3 class="results-title" id="rag-deployment-title">
+                  Déploiement &amp; CI/CD
+                </h3>
                 <ul class="deployment-list">
-                  <li><strong>Infrastructure.</strong> Services Docker sur un VPS
-                    Contabo, derrière Caddy ; traitements GPU sur Modal.</li>
-                  <li><strong>CI/CD.</strong> GitHub Actions exécute les tests de
+                  <li>
+                    <strong>Infrastructure.</strong> Services Docker sur un VPS
+                    Contabo, derrière Caddy ; traitements GPU sur Modal.
+                  </li>
+                  <li>
+                    <strong>CI/CD.</strong> GitHub Actions exécute les tests de
                     configuration, construit les images concernées et les
-                    déploie avec une version liée au commit Git.</li>
-                  <li><strong>Validation.</strong> Les changements pouvant modifier
-                    la recherche passent un contrôle du rappel sur le jeu de
-                    référence, en préproduction. Retour automatique à la version
-                    précédente si le contrôle de santé de l'API échoue.</li>
+                    déploie avec une version liée au commit Git.
+                  </li>
+                  <li>
+                    <strong>Validation.</strong> Les changements pouvant
+                    modifier la recherche passent un contrôle du rappel sur le
+                    jeu de référence, en préproduction. Retour automatique à la
+                    version précédente si le contrôle de santé de l'API échoue.
+                  </li>
                 </ul>
               </aside>
 
@@ -515,14 +540,11 @@
 
               <ul class="details">
                 <li>
-                  <strong>Pipeline de réponse adaptatif.</strong> Selon le type
-                  de question, il utilise une recherche hybride (full-text
-                  PostgreSQL, vectorielle avec pgvector, fusion RRF, puis
-                  reranking Cohere) ou une route Text-to-SQL pour les questions
-                  chiffrées. Les deux parcours tournent dans LangGraph, avec un
-                  agent autonome Mistral pour le Text-to-SQL. Le modèle
-                  d'embedding et la taille des vecteurs ont été choisis par un
-                  banc sur 45 questions annotées.
+                  <strong>Pipeline de réponse adaptatif.</strong> L'utilisateur
+                  cherche t-il des informations sur le contenu des vidéos ? Des
+                  statistiques ? Des élements précis comme la description ou
+                  transcription d'une vidéo ? Le pipeline s'adapte en
+                  conséquence avec de nombreuses stratégies.
                   <a
                     class="details-link"
                     href="https://ionis.tanguym.fr/pipeline_reponse/"
@@ -530,6 +552,12 @@
                     rel="noopener noreferrer"
                     >Voir le pipeline de réponse →</a
                   >
+                </li>
+                <li>
+                  <strong>Mémoire conversationnelle.</strong> Le contexte est
+                  conservé d'un échange à l'autre afin d'interpréter les
+                  questions de suivi, même lorsqu'elles dépendent des messages
+                  précédents.
                 </li>
                 <li>
                   <strong>Agent de secours.</strong> En cas d'échec, un agent
