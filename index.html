@@ -515,11 +515,14 @@
 
               <ul class="details">
                 <li>
-                  <strong>Recherche hybride.</strong>
-                  Full-text PostgreSQL, vectorielle avec pgvector, fusion RRF,
-                  puis reranking Cohere. Le modèle d'embedding et la taille des
-                  vecteurs ont été choisis par un banc sur 45 questions
-                  annotées.
+                  <strong>Pipeline de réponse adaptatif.</strong> Selon le type
+                  de question, il utilise une recherche hybride (full-text
+                  PostgreSQL, vectorielle avec pgvector, fusion RRF, puis
+                  reranking Cohere) ou une route Text-to-SQL pour les questions
+                  chiffrées. Les deux parcours tournent dans LangGraph, avec un
+                  agent autonome Mistral pour le Text-to-SQL. Le modèle
+                  d'embedding et la taille des vecteurs ont été choisis par un
+                  banc sur 45 questions annotées.
                   <a
                     class="details-link"
                     href="https://ionis.tanguym.fr/pipeline_reponse/"
@@ -527,11 +530,6 @@
                     rel="noopener noreferrer"
                     >Voir le pipeline de réponse →</a
                   >
-                </li>
-                <li>
-                  <strong>Recherche chiffrée.</strong> Une route Text-to-SQL
-                  répond aux questions chiffrées. Le pipeline tourne sur
-                  LangGraph, avec un agent autonome Mistral.
                 </li>
                 <li>
                   <strong>Agent de secours.</strong> En cas d'échec, un agent
