@@ -288,8 +288,46 @@ h2 {
   margin-top: 1.25rem;
 }
 
-.cv-links .button {
+.cv-button {
+  display: flex;
   flex: 1 1 8rem;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 5.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #102548, #0b172c);
+  color: #91b8ff;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.cv-button:hover {
+  border-color: #6d9bf4;
+  background: linear-gradient(135deg, #17366a, #10244a);
+  transform: translateY(-2px);
+}
+
+.cv-button-icon {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 3.375rem;
+}
+
+.cv-button span {
+  display: grid;
+  gap: 0.125rem;
+}
+
+.cv-button strong {
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+.cv-button small {
+  color: var(--muted);
+  font-size: 0.75rem;
 }
 
 /* Mosaïques */
