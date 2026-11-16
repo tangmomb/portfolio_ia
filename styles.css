@@ -678,7 +678,7 @@ html:has(.lightbox[open]) {
 
 .goals-list {
   display: grid;
-  gap: 0.125rem;
+  gap: 0.1rem;
   font-size: 0.9375rem;
 }
 
