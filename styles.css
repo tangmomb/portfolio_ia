@@ -210,9 +210,16 @@ h2 {
 }
 
 /* Sommaire */
+.hero-links {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.72fr);
+  gap: 3rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
 .summary {
   display: grid;
-  margin-top: 2rem;
   border-top: 1px solid var(--border);
 }
 
@@ -233,6 +240,56 @@ h2 {
   color: var(--muted);
   font-size: 0.875rem;
   font-variant-numeric: tabular-nums;
+}
+
+.contact-card {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.contact-card-title {
+  margin-bottom: 0.25rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-email {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email:hover,
+.contact-card-links a:hover {
+  color: var(--muted);
+}
+
+.contact-card-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.contact-card-links a {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.cv-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.cv-links .button {
+  flex: 1 1 8rem;
 }
 
 /* Mosaïques */
@@ -761,6 +818,11 @@ html:has(.lightbox[open]) {
 }
 
 @media (max-width: 960px) {
+  .hero-links {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
   .project-media {
     height: auto;
     min-height: 0;
