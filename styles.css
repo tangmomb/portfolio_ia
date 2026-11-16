@@ -281,6 +281,18 @@ h2 {
   font-size: 0.875rem;
 }
 
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  text-decoration: none;
+}
+
+.social-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
 .cv-links {
   display: flex;
   flex-wrap: wrap;
