@@ -237,6 +237,28 @@
                 </ul>
               </aside>
 
+              <aside
+                class="results decisions"
+                aria-labelledby="agents-decisions-title"
+              >
+                <h3 class="results-title" id="agents-decisions-title">
+                  Décisions d’ingénierie
+                </h3>
+                <ul class="decisions-list">
+                  <li>
+                    <strong>Consensus à trois modèles.</strong> Une image n’est
+                    retenue que si les trois annotateurs de vision sont d’accord,
+                    pour privilégier la qualité des labels plutôt que le volume.
+                  </li>
+                  <li>
+                    <strong>Décision de production déterministe.</strong>
+                    L’orchestrateur peut explorer, mais seul le code sélectionne
+                    un modèle après son test final, afin de garder un résultat
+                    reproductible.
+                  </li>
+                </ul>
+              </aside>
+
               <div class="results">
                 <p class="results-title">
                   Statistiques actuelles sur 75 vidéos
@@ -486,6 +508,27 @@
                     modifier la recherche passent un contrôle du rappel sur le
                     jeu de référence, en préproduction. Retour automatique à la
                     version précédente si le contrôle de santé de l'API échoue.
+                  </li>
+                </ul>
+              </aside>
+
+              <aside
+                class="results decisions"
+                aria-labelledby="rag-decisions-title"
+              >
+                <h3 class="results-title" id="rag-decisions-title">
+                  Décisions d’ingénierie
+                </h3>
+                <ul class="decisions-list">
+                  <li>
+                    <strong>Routage par intention.</strong> Le système choisit
+                    entre recherche documentaire et Text-to-SQL selon la
+                    question, au lieu de forcer toutes les demandes dans un RAG.
+                  </li>
+                  <li>
+                    <strong>Recherche hybride évaluée.</strong> Le couple
+                    full-text et vectoriel est fusionné puis reranké, avec ses
+                    paramètres retenus sur un jeu de questions de référence.
                   </li>
                 </ul>
               </aside>
@@ -1128,6 +1171,27 @@
                   <div><dt>Approche</dt><dd>Fine-tuning LoRA, données synthétiques contrôlées et protocole d'évaluation figé.</dd></div>
                   <div><dt>Résultat</dt><dd>Le Qwen 2B passe de 29,48 % à 67,44 % d'execution accuracy.</dd></div>
                 </dl>
+              </aside>
+
+              <aside
+                class="results decisions"
+                aria-labelledby="lora-decisions-title"
+              >
+                <h3 class="results-title" id="lora-decisions-title">
+                  Décisions d’ingénierie
+                </h3>
+                <ul class="decisions-list">
+                  <li>
+                    <strong>Comparer avec un protocole figé.</strong> Les
+                    adaptateurs LoRA sont mesurés sur un jeu de test séparé,
+                    pour isoler leur gain face aux modèles bruts.
+                  </li>
+                  <li>
+                    <strong>Contrôler les données synthétiques.</strong> Chaque
+                    exemple passe une validation déterministe et un juge LLM
+                    avant l’entraînement, afin de limiter le bruit des données.
+                  </li>
+                </ul>
               </aside>
 
               <div class="results">

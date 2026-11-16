@@ -769,6 +769,44 @@ html:has(.lightbox[open]) {
   font-weight: 600;
 }
 
+/* Décisions d'ingénierie : rendre visibles les compromis techniques */
+.decisions {
+  border-color: rgba(167, 139, 250, 0.35);
+  background: rgba(167, 139, 250, 0.06);
+}
+
+.decisions .results-title {
+  color: #c4b5fd;
+}
+
+.decisions-list {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: #d5cef0;
+}
+
+.decisions-list li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.decisions-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: #a78bfa;
+}
+
+.decisions-list strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
 /* Détails */
 .details {
   display: grid;
