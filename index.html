@@ -592,9 +592,8 @@
                   </li>
                   <li>
                     <strong>Robustesse.</strong> Limites par IP et budget
-                    quotidien sur les routes qui appellent un LLM, logs JSON
-                    avec identifiant de requête, test mensuel de restauration de
-                    la sauvegarde (reprise en 12 s). Objectifs de service et
+                    quotidien sur les routes qui appellent un LLM, test mensuel
+                    de restauration de la sauvegarde (reprise en 12 s). Objectifs de service et
                     procédures d'incident documentés dans un
                     <a
                       href="https://github.com/tangmomb/rag_ionis/blob/master/docs/exploitation.md"
@@ -602,6 +601,15 @@
                       rel="noopener noreferrer"
                       >runbook</a
                     >.
+                  </li>
+                  <li>
+                    <strong>Logs et traces corrélés.</strong> Logs JSON
+                    centralisés dans Grafana Cloud (Loki) par l'agent Alloy :
+                    chaque appel porte un identifiant de requête, affiché comme
+                    référence en cas d'erreur et rattaché à la trace
+                    OpenTelemetry de la question dans Phoenix. D'une erreur dans
+                    les logs, on remonte au détail de chaque étape du pipeline,
+                    et inversement.
                   </li>
                 </ul>
               </aside>
