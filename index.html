@@ -589,6 +589,19 @@
                     votes, notes) part sur Telegram, et le rappel est remesuré
                     en production deux fois par mois.
                   </li>
+                  <li>
+                    <strong>Robustesse.</strong> Limites par IP et budget
+                    quotidien sur les routes qui appellent un LLM, logs JSON
+                    avec identifiant de requête, test mensuel de restauration de
+                    la sauvegarde (reprise en 12 s). Objectifs de service et
+                    procédures d'incident documentés dans un
+                    <a
+                      href="https://github.com/tangmomb/rag_ionis/blob/master/docs/exploitation.md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >runbook</a
+                    >.
+                  </li>
                 </ul>
               </aside>
 
