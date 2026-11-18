@@ -27,6 +27,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
+    <script src="quality-charts.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -672,6 +673,48 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
+
+              <div class="results quality" data-quality-history>
+                <p class="results-title">Qualité mesurée en production</p>
+                <div class="quality-grid-charts">
+                  <figure class="quality-chart" data-metric="recall">
+                    <figcaption>
+                      Recall vidéo du golden dataset
+                      <span class="quality-legend"
+                        ><span class="quality-key quality-key-threshold"></span
+                        >seuil 80 %</span
+                      >
+                    </figcaption>
+                    <div class="quality-plot">
+                      <svg role="img" aria-label="Courbe du recall vidéo du golden dataset"></svg>
+                      <div class="quality-tooltip" role="status" hidden></div>
+                    </div>
+                  </figure>
+                  <figure class="quality-chart" data-metric="faithfulness">
+                    <figcaption>
+                      Fidélité des réponses, notée par un LLM juge
+                      <span class="quality-legend"
+                        ><span class="quality-key quality-key-threshold"></span
+                        >seuil 80 %</span
+                      >
+                    </figcaption>
+                    <div class="quality-plot">
+                      <svg role="img" aria-label="Courbe de la fidélité des réponses du canari"></svg>
+                      <div class="quality-tooltip" role="status" hidden></div>
+                    </div>
+                  </figure>
+                </div>
+                <p class="quality-note">
+                  Données en direct, mises à jour chaque matin.
+                  <a
+                    class="details-link"
+                    href="https://ionis.tanguym.fr/faq#maintenance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Méthode et tableau des données →</a
+                  >
+                </p>
               </div>
 
               <ul class="details">
