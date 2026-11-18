@@ -120,7 +120,7 @@
           at: point.at,
           value: point.video_recall,
           details: [
-            point.kind === "recall_gate" ? "Avant un déploiement" : "Mesure en prod",
+            point.kind === "recall_gate" ? "Avant un déploiement" : "Mesure en prod (1er et 15 du mois)",
             ...(point.commit ? [`commit ${point.commit}`] : []),
           ],
         })),
@@ -132,6 +132,13 @@
       };
       emptyText = "Pas encore de mesure";
       drawAll();
+      // La pastille « Recall vidéos » suit la dernière mesure ; sans données, le HTML garde sa valeur.
+      const latest = series.recall[series.recall.length - 1];
+      const pill = document.querySelector("[data-latest-recall]");
+      if (latest && pill) {
+        pill.textContent = percent.format(latest.value);
+        pill.title = `Dernière mesure : ${longDate(latest.at)}`;
+      }
     })
     .catch(() => {
       emptyText = "Données indisponibles";
