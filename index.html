@@ -580,6 +580,15 @@
                     requêtes dans Phoenix. Panne, saturation ou échec d'une
                     mise à jour ou d'une sauvegarde : alerte Telegram.
                   </li>
+                  <li>
+                    <strong>Qualité en production.</strong> Chaque matin, un
+                    LLM juge, distinct du modèle qui répond, note la fidélité
+                    aux sources et la pertinence des réponses de la veille et de
+                    10 questions de référence ; les notes sont attachées aux
+                    traces Phoenix. Un rapport (latence, coût face au budget,
+                    votes, notes) part sur Telegram, et le rappel est remesuré
+                    en production deux fois par mois.
+                  </li>
                 </ul>
               </aside>
 
