@@ -455,7 +455,8 @@ a.tile:hover {
   object-position: top;
 }
 
-#agents .tile img {
+#agents .tile img,
+#sav .tile img {
   object-position: top left;
 }
 
@@ -612,6 +613,11 @@ html:has(.lightbox[open]) {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--card);
+}
+
+.results > .note {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
 }
 
 .results-title {

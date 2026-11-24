@@ -6,7 +6,7 @@
     <title>Tanguy Mombert · Ingénieur IA junior</title>
     <meta
       name="description"
-      content="Cinq projets d'IA de Tanguy Mombert, ingénieur IA junior : pipeline multi-agents, RAG en production, fine-tuning LoRA, assistant de recherche d'emploi à base d'agents LLM et serveur MCP sécurisé, avec leurs mesures."
+      content="Six projets d'IA de Tanguy Mombert, ingénieur IA junior : pipeline multi-agents, RAG en production, fine-tuning LoRA, assistant de recherche d'emploi à base d'agents LLM, serveur MCP sécurisé et agent de service client, avec leurs mesures."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://portfolio-ia.tanguym.fr/" />
@@ -15,7 +15,7 @@
     <meta property="og:title" content="Tanguy Mombert · Ingénieur IA junior" />
     <meta
       property="og:description"
-      content="Pipeline multi-agents, RAG en production, fine-tuning LoRA, assistant de recherche d'emploi à base d'agents LLM et serveur MCP sécurisé, avec leurs mesures."
+      content="Pipeline multi-agents, RAG en production, fine-tuning LoRA, assistant de recherche d'emploi à base d'agents LLM, serveur MCP sécurisé et agent de service client, avec leurs mesures."
     />
     <link rel="icon" href="favicon.png" type="image/png" />
     <link
@@ -54,6 +54,7 @@
                 ><span>04</span> Assistant de recherche d'emploi</a
               >
               <a href="#mcp"><span>05</span> Serveur MCP de contact</a>
+              <a href="#sav"><span>06</span> Agent de service client</a>
             </nav>
 
             <aside
@@ -1875,6 +1876,262 @@
                   <figcaption>
                     Page de référence : endpoint, pile protocolaire, les deux
                     outils avec leurs paramètres et la sécurité du serveur.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sav" class="section project">
+          <div class="inner project-grid">
+            <div class="project-text">
+              <p class="eyebrow">Projet 06 · Agents LLM, LangGraph</p>
+              <h2>Un agent de service client qui ne décide pas seul</h2>
+              <p class="lead">
+                Il suit les commandes d'une boutique fictive et traite retours,
+                échanges et remboursements :
+                <span class="highlight"
+                  >le modèle propose, des règles décident, le client
+                  confirme</span
+                >.
+              </p>
+
+              <aside class="case-study" aria-label="Projet en bref">
+                <p class="case-study-title">En bref</p>
+                <dl>
+                  <div>
+                    <dt>Intention</dt>
+                    <dd>
+                      Laisser un LLM agir sur des commandes sans lui confier les
+                      décisions ni les montants.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Approche</dt>
+                    <dd>
+                      Agent à outils sous LangGraph, règles sans LLM, accord du
+                      client et réponses vérifiées avant envoi.
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Résultat</dt>
+                    <dd>
+                      96 % de réussite, contre 55 % pour la version précédente,
+                      un workflow où le LLM ne faisait qu'extraire des champs.
+                    </dd>
+                  </div>
+                </dl>
+              </aside>
+
+              <aside
+                class="results deployment"
+                aria-labelledby="sav-deployment-title"
+              >
+                <h3 class="results-title" id="sav-deployment-title">
+                  Déploiement &amp; CI/CD
+                </h3>
+                <ul class="deployment-list">
+                  <li>
+                    <strong>Démo publique.</strong> Une boutique et une base par
+                    visiteur, sur un VPS avec Docker et Caddy. Limites par
+                    adresse et budget de tokens par jour.
+                  </li>
+                  <li>
+                    <strong>CI/CD.</strong> 209 tests pytest sans appel au
+                    modèle. Le déploiement ne part que si la CI réussit, avec
+                    une clé SSH limitée à un script.
+                  </li>
+                  <li>
+                    <strong>Retour arrière.</strong> La version précédente est
+                    remise si la nouvelle ne démarre pas.
+                  </li>
+                </ul>
+              </aside>
+
+              <div class="results">
+                <p class="results-title">
+                  Scénarios joués par un client simulé, notés sans LLM
+                </p>
+                <dl class="results-list">
+                  <div>
+                    <dt>Réussite</dt>
+                    <dd>96 % (workflow : 55 %)</dd>
+                  </div>
+                  <div>
+                    <dt>Actions non voulues</dt>
+                    <dd>0 (workflow : 4)</dd>
+                  </div>
+                  <div>
+                    <dt>Réponse P50 / P95</dt>
+                    <dd>2,8 s / 7,7 s</dd>
+                  </div>
+                </dl>
+                <p class="note">
+                  55 scénarios valides pour l'agent, 56 pour le workflow, un
+                  seul essai chacun, sur la version du 23 novembre 2026. L'agent
+                  a été corrigé sur ces mêmes scénarios, et le workflow n'était
+                  prévu ni pour rembourser ni pour répondre aux questions.
+                </p>
+              </div>
+
+              <ul class="details">
+                <li>
+                  <strong>Deux graphes.</strong> Le chat reste toujours
+                  disponible ; chaque demande a son propre dossier, qui peut
+                  attendre des jours la boutique ou un colis.
+                </li>
+                <li>
+                  <strong>Règles sans LLM.</strong> Elles acceptent, soumettent
+                  à la boutique ou refusent, et fixent les montants. Seul un
+                  geste commercial part du montant demandé, plafonné et validé
+                  par la boutique.
+                </li>
+                <li>
+                  <strong>Réponses vérifiées.</strong> Une réponse qui cite un
+                  montant absent des outils, ou annonce une action non
+                  enregistrée, est retenue.
+                </li>
+                <li>
+                  <strong>Pannes.</strong> Checkpoints PostgreSQL et écritures
+                  idempotentes : un arrêt entre deux écritures se reprend sans
+                  doublon.
+                </li>
+                <li>
+                  <strong>Explorateur de graphes.</strong> Une page extraite du
+                  code montre ce que chaque nœud lit, écrit et envoie au modèle.
+                </li>
+                <li>
+                  <strong>MCP.</strong> Les mêmes outils sont exposés à d'autres
+                  agents, avec les mêmes règles et l'accord de la personne.
+                </li>
+              </ul>
+
+              <ul class="tags" aria-label="Technologies">
+                <li>LangGraph</li>
+                <li>Mistral API</li>
+                <li>PostgreSQL</li>
+                <li>MCP</li>
+                <li>Docker</li>
+                <li>GitHub Actions</li>
+                <li>Python</li>
+              </ul>
+
+              <div class="actions">
+                <a
+                  class="button button-accent"
+                  href="https://agent-sav.tanguym.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Essayer la démo</a
+                >
+                <a
+                  class="button"
+                  href="https://agent-sav.tanguym.fr/graphs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Explorer les graphes</a
+                >
+                <a
+                  class="button"
+                  href="https://github.com/tangmomb/agent_sav"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code sur GitHub</a
+                >
+              </div>
+            </div>
+
+            <div class="project-media">
+              <div class="mosaic">
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/sav/graphes.webp">
+                    <img
+                      src="assets/sav/thumbs/graphes.webp"
+                      width="960"
+                      height="600"
+                      loading="lazy"
+                      alt="Explorateur de graphes : le chat et les dossiers, deux graphes LangGraph reliés par la base."
+                    />
+                  </a>
+                  <figcaption>
+                    Explorateur de graphes : le chat et les dossiers, deux
+                    graphes LangGraph reliés par la base.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/sav/chat.webp">
+                    <img
+                      src="assets/sav/thumbs/chat.webp"
+                      width="480"
+                      height="300"
+                      loading="lazy"
+                      alt="Chat : le récapitulatif vient des règles, et rien n'est enregistré sans l'accord du client."
+                    />
+                  </a>
+                  <figcaption>
+                    Chat : le récapitulatif vient des règles, et rien n'est
+                    enregistré sans l'accord du client.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/sav/back-office.webp">
+                    <img
+                      src="assets/sav/thumbs/back-office.webp"
+                      width="480"
+                      height="338"
+                      loading="lazy"
+                      alt="Back-office : la boutique tranche, avec la règle appliquée et la chronologie de l'agent."
+                    />
+                  </a>
+                  <figcaption>
+                    Back-office : la boutique tranche, avec la règle appliquée
+                    et la chronologie de l'agent.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/sav/prompt.webp">
+                    <img
+                      src="assets/sav/thumbs/prompt.webp"
+                      width="480"
+                      height="300"
+                      loading="lazy"
+                      alt="Nœud agent : le prompt complet et les réglages envoyés au modèle, extraits du code."
+                    />
+                  </a>
+                  <figcaption>
+                    Nœud agent : le prompt complet et les réglages envoyés au
+                    modèle, extraits du code.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/sav/regles.webp">
+                    <img
+                      src="assets/sav/thumbs/regles.webp"
+                      width="480"
+                      height="300"
+                      loading="lazy"
+                      alt="Nœud policy : les règles lisent la base et décident sans modèle."
+                    />
+                  </a>
+                  <figcaption>
+                    Nœud policy : les règles lisent la base et décident sans
+                    modèle.
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/sav/matrice.webp">
+                    <img
+                      src="assets/sav/thumbs/matrice.webp"
+                      width="480"
+                      height="300"
+                      loading="lazy"
+                      alt="Matrice : ce que chaque nœud lit et écrit, dans l'état et en base."
+                    />
+                  </a>
+                  <figcaption>
+                    Matrice : ce que chaque nœud lit et écrit, dans l'état et en
+                    base.
                   </figcaption>
                 </figure>
               </div>
