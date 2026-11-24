@@ -438,6 +438,11 @@ h2 {
   min-height: 0;
 }
 
+#sql-rapport .mosaic-item .tile {
+  flex: none;
+  aspect-ratio: 1265 / 943;
+}
+
 a.tile {
   cursor: zoom-in;
 }

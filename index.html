@@ -6,7 +6,7 @@
     <title>Tanguy Mombert · Ingénieur IA junior</title>
     <meta
       name="description"
-      content="Six projets d'IA de Tanguy Mombert, ingénieur IA junior : pipeline multi-agents, RAG en production, fine-tuning LoRA, agent de service client, assistant de recherche d'emploi à base d'agents LLM et serveur MCP sécurisé, avec leurs mesures."
+      content="Sept projets d'IA de Tanguy Mombert, ingénieur IA junior : pipeline multi-agents, RAG en production, fine-tuning LoRA, agent de service client, agent SQL de génération de rapports, assistant de recherche d'emploi et serveur MCP sécurisé, avec leurs mesures."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://portfolio-ia.tanguym.fr/" />
@@ -15,7 +15,7 @@
     <meta property="og:title" content="Tanguy Mombert · Ingénieur IA junior" />
     <meta
       property="og:description"
-      content="Pipeline multi-agents, RAG en production, fine-tuning LoRA, agent de service client, assistant de recherche d'emploi à base d'agents LLM et serveur MCP sécurisé, avec leurs mesures."
+      content="Pipeline multi-agents, RAG en production, fine-tuning LoRA, agent de service client, agent SQL de génération de rapports, assistant de recherche d'emploi et serveur MCP sécurisé, avec leurs mesures."
     />
     <link rel="icon" href="favicon.png" type="image/png" />
     <link
@@ -51,10 +51,11 @@
               <a href="#rag"><span>02</span> RAG sur des vidéos YouTube</a>
               <a href="#lora"><span>03</span> Fine-tuning LoRA text-to-SQL</a>
               <a href="#sav"><span>04</span> Agent de service client</a>
+              <a href="#sql-rapport"><span>05</span> Agent SQL et rapports PDF</a>
               <a href="#assistant"
-                ><span>05</span> Assistant de recherche d'emploi</a
+                ><span>06</span> Assistant de recherche d'emploi</a
               >
-              <a href="#mcp"><span>06</span> Serveur MCP de contact</a>
+              <a href="#mcp"><span>07</span> Serveur MCP de contact</a>
             </nav>
 
             <aside
@@ -1830,10 +1831,103 @@
           </div>
         </section>
 
+        <section id="sql-rapport" class="section project">
+          <div class="inner project-grid">
+            <div class="project-text">
+              <p class="eyebrow">Projet 05 · Agents LLM, SQL</p>
+              <h2>Un agent SQL qui génère des rapports PDF</h2>
+              <p class="lead">
+                À partir d'une question sur les commandes Olist, l'agent
+                interroge SQLite et produit
+                <span class="highlight"
+                  >un rapport PDF avec une synthèse, des tableaux et des graphiques</span
+                >
+                selon les résultats.
+              </p>
+
+              <div class="results">
+                <p class="results-title">Évaluation de Mistral Small 4 sur Olist</p>
+                <dl class="results-list">
+                  <div>
+                    <dt>Résultats SQL exacts</dt>
+                    <dd>28 questions sur 30</dd>
+                  </div>
+                  <div>
+                    <dt>Chiffres du texte reliés aux résultats SQL</dt>
+                    <dd>103 occurrences sur 236 (43,6 %)</dd>
+                  </div>
+                  <div>
+                    <dt>Coût estimé du benchmark</dt>
+                    <dd>0,0565 $ pour 30 questions</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <ul class="details">
+                <li>
+                  <strong>Requêtes encadrées.</strong> Mistral choisit les appels
+                  d'outils. Python valide chaque requête avec SQLGlot avant
+                  de l'exécuter sur SQLite en lecture seule.
+                </li>
+                <li>
+                  <strong>Chiffres vérifiables.</strong> Le rapport résout les
+                  références à des cellules SQL et signale les nombres du texte
+                  qu'il ne retrouve pas dans les résultats.
+                </li>
+                <li>
+                  <strong>Exécution inspectable.</strong> Le Studio rejoue la
+                  démonstration Olist et lit les traces importées dans le
+                  navigateur. Chaque étape permet d'examiner les messages,
+                  les appels d'outils et leurs résultats.
+                </li>
+              </ul>
+
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li>
+                <li>Mistral</li>
+                <li>SQLite</li>
+                <li>SQLGlot</li>
+                <li>Matplotlib</li>
+                <li>WeasyPrint</li>
+              </ul>
+
+              <div class="actions">
+                <a
+                  class="button button-accent"
+                  href="https://agent-sql-rapport.tanguym.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Explorer le Studio</a
+                >
+              </div>
+            </div>
+
+            <div class="project-media">
+              <div class="mosaic">
+                <figure class="mosaic-item">
+                  <a class="tile" href="assets/sql-rapport/studio.jpg">
+                    <img
+                      src="assets/sql-rapport/studio.jpg"
+                      width="1265"
+                      height="943"
+                      loading="lazy"
+                      alt="Studio Olist : chronologie, carte du pipeline et aperçu du résultat SQLite comparant les livraisons à l'heure et en retard."
+                    />
+                  </a>
+                  <figcaption>
+                    Démonstration Olist sur les délais de livraison et les avis
+                    clients en 2017.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="assistant" class="section project">
           <div class="inner project-grid">
             <div class="project-text">
-              <p class="eyebrow">Projet 05 · Agents LLM, automatisation</p>
+              <p class="eyebrow">Projet 06 · Agents LLM, automatisation</p>
               <h2>Un assistant de recherche d'emploi à base d'agents LLM</h2>
               <p class="lead">
                 Il cherche des offres sur LinkedIn, Welcome to the Jungle et
@@ -2047,7 +2141,7 @@
         <section id="mcp" class="section project">
           <div class="inner project-grid">
             <div class="project-text">
-              <p class="eyebrow">Projet 06 · MCP, sécurité</p>
+              <p class="eyebrow">Projet 07 · MCP, sécurité</p>
               <h2>Un serveur MCP pour me contacter</h2>
               <p class="lead">
                 Deux outils privés, <code>send_email</code> et
